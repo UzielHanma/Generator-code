@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTH-CORE V1 | Intelligence Interface</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-mono antialiased overflow-hidden h-screen flex flex-col">
+
+    <!-- Header Operativo -->
+    <header class="border-b border-zinc-800 p-4 flex justify-between items-center bg-zinc-900/50">
+        <div class="flex items-center gap-2">
+            <i data-lucide="cpu" class="text-emerald-500 w-5 h-5"></i>
+            <h1 class="font-bold tracking-tighter text-lg uppercase">DevForge <span class="text-emerald-500">Synth-Core V1</span></h1>
+        </div>
+        <div class="flex gap-4 text-xs">
+            <div id="status-latency" class="flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> LATENCIA: 0.002ms
+            </div>
+            <div id="db-size" class="text-zinc-500 uppercase font-bold">Lógica: Local-Hardcoded</div>
+        </div>
+    </header>
+
+    <!-- Terminal de Salida -->
+    <main id="chat-container" class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
+        <div class="bg-zinc-900 border border-zinc-800 p-3 rounded">
+            <p class="text-emerald-500 font-bold mb-1">[SISTEMA]</p>
+            <p>Núcleo de síntesis activado. Sin dependencias externas. Listo para procesar comandos complejos, matemáticas, lógica y consultas de bases de datos locales.</p>
+        </div>
+    </main>
+
+    <!-- Entrada de Comandos -->
+    <footer class="p-4 border-t border-zinc-800 bg-zinc-900">
+        <form id="ai-form" class="max-w-6xl mx-auto flex gap-2">
+            <div class="relative flex-1">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Ingrese comando o consulta (ej: 'ayuda', 'calcular 5*5', 'crear html')..." 
+                    class="w-full bg-zinc-950 border border-zinc-700 p-3 rounded focus:outline-none focus:border-emerald-500 transition-colors"
+                    autocomplete="off"
+                >
+                <div class="absolute right-3 top-3 text-zinc-600 text-[10px] uppercase font-bold select-none pointer-events-none">
+                    Local-Engine-Active
+                </div>
+            </div>
+            <button type="submit" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded font-bold uppercase flex items-center gap-2 transition-all active:scale-95">
+                Ejecutar
+                <i data-lucide="terminal" class="w-4 h-4"></i>
+            </button>
+        </form>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="forge-core.js"></script>
+</body>
+</html>
