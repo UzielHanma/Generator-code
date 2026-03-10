@@ -1,0 +1,52 @@
+/* styles.css */
+:root {
+  --blue-primary: #3b82f6;
+  --purple-primary: #8b5cf6;
+  --bg-dark: #050505;
+}
+
+body {
+    background-color: var(--bg-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* Glassmorphism subtle animation */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Typing effect placeholder */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+}
+
+/* Code block styling in chat */
+.code-snippet {
+    background: #000;
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
